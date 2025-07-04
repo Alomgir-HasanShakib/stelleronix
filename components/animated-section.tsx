@@ -1,26 +1,29 @@
 // components/animated-section.tsx
-"use client"
+"use client";
 
-import { motion, useAnimation, useInView } from "framer-motion"
-import { useEffect, useRef } from "react"
+import { motion, useAnimation, useInView } from "framer-motion";
+import { useEffect, useRef } from "react";
 
 interface AnimatedSectionProps {
-  children: React.ReactNode
-  delay?: number
+  children: React.ReactNode;
+  delay?: number;
 }
 
-export default function AnimatedSection({ children, delay = 0 }: AnimatedSectionProps) {
-  const ref = useRef(null)
-  const inView = useInView(ref, { threshold: 0.2 })
-  const controls = useAnimation()
+export default function AnimatedSection({
+  children,
+  delay = 0,
+}: AnimatedSectionProps) {
+  const ref = useRef(null);
+  const inView = useInView(ref);
+  const controls = useAnimation();
 
   useEffect(() => {
     if (inView) {
-      controls.start("visible")
+      controls.start("visible");
     } else {
-      controls.start("hidden")
+      controls.start("hidden");
     }
-  }, [inView, controls])
+  }, [inView, controls]);
 
   const variants = {
     hidden: { opacity: 0, y: 40 },
@@ -33,7 +36,7 @@ export default function AnimatedSection({ children, delay = 0 }: AnimatedSection
         ease: "easeOut",
       },
     },
-  }
+  };
 
   return (
     <motion.section
@@ -44,5 +47,5 @@ export default function AnimatedSection({ children, delay = 0 }: AnimatedSection
     >
       {children}
     </motion.section>
-  )
+  );
 }
