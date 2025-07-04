@@ -58,7 +58,7 @@ export default function ContactForm() {
           <span className="text-blue-400 text-sm font-semibold uppercase tracking-wider mb-4 block">Get in Touch</span>
           <h2 className="text-5xl lg:text-6xl font-light text-white mb-6 tracking-tight">Contact Us</h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto font-light leading-relaxed">
-            Ready to transform your business? Let's discuss your requirements and explore how we can help you achieve
+            Ready to transform your business? Let&apos;s discuss your requirements and explore how we can help you achieve
             your goals.
           </p>
         </div>
@@ -74,7 +74,7 @@ export default function ContactForm() {
                   </div>
                   <div>
                     <h3 className="text-white font-semibold">Email Us</h3>
-                    <p className="text-gray-400 text-sm">We'll respond within 24 hours</p>
+                    <p className="text-gray-400 text-sm">We&apos;ll respond within 24 hours</p>
                   </div>
                 </div>
                 <div className="space-y-2">
@@ -125,7 +125,7 @@ export default function ContactForm() {
                   </div>
                   <div>
                     <h3 className="text-white font-semibold">Business Hours</h3>
-                    <p className="text-gray-400 text-sm">We're always available</p>
+                    <p className="text-gray-400 text-sm">We&apos;re always available</p>
                   </div>
                 </div>
                 <div className="space-y-1">

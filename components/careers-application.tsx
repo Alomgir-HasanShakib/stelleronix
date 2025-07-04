@@ -1,11 +1,19 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { ArrowRight, Mail, Phone, Upload, User, FileText, Briefcase } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
+import { useState } from "react";
+import {
+  ArrowRight,
+  Mail,
+  Phone,
+  Upload,
+  User,
+  FileText,
+  Briefcase,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 
 export default function CareersApplication() {
   const [formData, setFormData] = useState({
@@ -15,18 +23,21 @@ export default function CareersApplication() {
     position: "",
     experience: "",
     coverLetter: "",
-  })
+  });
 
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+    e.preventDefault();
+    setIsSubmitting(true);
 
     // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000))
+    await new Promise((resolve) => setTimeout(resolve, 2000));
 
-    alert("Thank you for your application! We'll review it and get back to you within 5 business days.")
+    alert(
+      "Thank you for your application! We&apos;ll review it and get back to you within 5 business days."
+    );
+
     setFormData({
       name: "",
       email: "",
@@ -34,16 +45,20 @@ export default function CareersApplication() {
       position: "",
       experience: "",
       coverLetter: "",
-    })
-    setIsSubmitting(false)
-  }
+    });
+    setIsSubmitting(false);
+  };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
-    })
-  }
+    });
+  };
 
   return (
     <section className="py-24 bg-gradient-to-br from-gray-800 to-gray-900">
@@ -52,9 +67,12 @@ export default function CareersApplication() {
           {/* Application Form */}
           <div>
             <div className="mb-8">
-              <h2 className="text-4xl lg:text-5xl font-light text-white mb-6 tracking-tight">Apply Now</h2>
+              <h2 className="text-4xl lg:text-5xl font-light text-white mb-6 tracking-tight">
+                Apply Now
+              </h2>
               <p className="text-xl text-gray-400 leading-relaxed">
-                Ready to join our team? Submit your application and let's start building the future together.
+                Ready to join our team? Submit your application and let&apos;s
+                start building the future together.
               </p>
             </div>
 
@@ -63,7 +81,10 @@ export default function CareersApplication() {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                      <label
+                        htmlFor="name"
+                        className="block text-sm font-medium text-gray-300 mb-2"
+                      >
                         Full Name *
                       </label>
                       <div className="relative">
@@ -82,7 +103,10 @@ export default function CareersApplication() {
                     </div>
 
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                      <label
+                        htmlFor="email"
+                        className="block text-sm font-medium text-gray-300 mb-2"
+                      >
                         Email Address *
                       </label>
                       <div className="relative">
@@ -103,7 +127,10 @@ export default function CareersApplication() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">
+                      <label
+                        htmlFor="phone"
+                        className="block text-sm font-medium text-gray-300 mb-2"
+                      >
                         Phone Number *
                       </label>
                       <div className="relative">
@@ -122,7 +149,10 @@ export default function CareersApplication() {
                     </div>
 
                     <div>
-                      <label htmlFor="position" className="block text-sm font-medium text-gray-300 mb-2">
+                      <label
+                        htmlFor="position"
+                        className="block text-sm font-medium text-gray-300 mb-2"
+                      >
                         Position Applied For *
                       </label>
                       <div className="relative">
@@ -136,11 +166,19 @@ export default function CareersApplication() {
                           className="w-full pl-10 pr-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                         >
                           <option value="">Select a position</option>
-                          <option value="software-developer">Software Developer (Web)</option>
+                          <option value="software-developer">
+                            Software Developer (Web)
+                          </option>
                           <option value="ui-ux-designer">UI/UX Designer</option>
-                          <option value="customer-support">Customer Support Executive</option>
-                          <option value="sales-marketing">Sales & Marketing Executive</option>
-                          <option value="project-manager">Project Manager</option>
+                          <option value="customer-support">
+                            Customer Support Executive
+                          </option>
+                          <option value="sales-marketing">
+                            Sales & Marketing Executive
+                          </option>
+                          <option value="project-manager">
+                            Project Manager
+                          </option>
                           <option value="internship">Internship Program</option>
                           <option value="other">Other</option>
                         </select>
@@ -149,7 +187,10 @@ export default function CareersApplication() {
                   </div>
 
                   <div>
-                    <label htmlFor="experience" className="block text-sm font-medium text-gray-300 mb-2">
+                    <label
+                      htmlFor="experience"
+                      className="block text-sm font-medium text-gray-300 mb-2"
+                    >
                       Years of Experience
                     </label>
                     <select
@@ -169,7 +210,10 @@ export default function CareersApplication() {
                   </div>
 
                   <div>
-                    <label htmlFor="coverLetter" className="block text-sm font-medium text-gray-300 mb-2">
+                    <label
+                      htmlFor="coverLetter"
+                      className="block text-sm font-medium text-gray-300 mb-2"
+                    >
                       Cover Letter / Why do you want to join us? *
                     </label>
                     <div className="relative">
@@ -188,14 +232,20 @@ export default function CareersApplication() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">Resume Upload</label>
+                    <label className="block text-sm font-medium text-gray-300 mb-2">
+                      Resume Upload
+                    </label>
                     <div className="border-2 border-dashed border-gray-600 rounded-lg p-6 text-center hover:border-gray-500 transition-colors">
                       <Upload className="h-8 w-8 text-gray-400 mx-auto mb-2" />
                       <p className="text-gray-400 text-sm">
                         Drag and drop your resume here, or{" "}
-                        <span className="text-green-400 cursor-pointer">browse files</span>
+                        <span className="text-green-400 cursor-pointer">
+                          browse files
+                        </span>
                       </p>
-                      <p className="text-gray-500 text-xs mt-1">PDF, DOC, DOCX up to 5MB</p>
+                      <p className="text-gray-500 text-xs mt-1">
+                        PDF, DOC, DOCX up to 5MB
+                      </p>
                     </div>
                   </div>
 
@@ -224,10 +274,12 @@ export default function CareersApplication() {
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-semibold text-white mb-4">Have Questions?</h3>
+              <h3 className="text-2xl font-semibold text-white mb-4">
+                Have Questions?
+              </h3>
               <p className="text-gray-400 leading-relaxed mb-6">
-                If you have any questions about our open positions or the application process, feel free to reach out to
-                our HR team.
+                If you have any questions about our open positions or the
+                application process, feel free to reach out to our HR team.
               </p>
             </div>
 
@@ -239,8 +291,12 @@ export default function CareersApplication() {
                       <Mail className="h-6 w-6 text-green-400" />
                     </div>
                     <div>
-                      <h4 className="text-white font-semibold">Email HR Team</h4>
-                      <p className="text-gray-400">sourav.maji@stelleronix.com</p>
+                      <h4 className="text-white font-semibold">
+                        Email HR Team
+                      </h4>
+                      <p className="text-gray-400">
+                        sourav.maji@stelleronix.com
+                      </p>
                     </div>
                   </div>
 
@@ -259,7 +315,9 @@ export default function CareersApplication() {
 
             <Card className="bg-gradient-to-br from-green-600/20 to-blue-600/20 border-green-600/30 backdrop-blur-sm">
               <CardContent className="p-8">
-                <h4 className="text-white font-semibold mb-4">Quick Tips for Your Application</h4>
+                <h4 className="text-white font-semibold mb-4">
+                  Quick Tips for Your Application
+                </h4>
                 <ul className="space-y-3 text-gray-300 text-sm">
                   <li className="flex items-start">
                     <div className="w-2 h-2 bg-green-400 rounded-full mr-3 mt-2 flex-shrink-0"></div>
@@ -284,5 +342,5 @@ export default function CareersApplication() {
         </div>
       </div>
     </section>
-  )
+  );
 }

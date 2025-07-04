@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { ArrowRight, Phone, Mail } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
+import { ArrowRight, Phone, Mail } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 
 export default function ServicesCTA() {
   return (
@@ -14,12 +14,16 @@ export default function ServicesCTA() {
               Ready to Transform Your Business?
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-12 leading-relaxed">
-              Let's discuss your requirements and explore how our comprehensive technology solutions can drive your
-              business growth and operational excellence.
+              Let&apos;s discuss your requirements and explore how our
+              comprehensive technology solutions can drive your business growth
+              and operational excellence.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4">
+              <Button
+                size="lg"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4"
+              >
                 Get Started Today
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
@@ -52,5 +56,5 @@ export default function ServicesCTA() {
         </Card>
       </div>
     </section>
-  )
+  );
 }

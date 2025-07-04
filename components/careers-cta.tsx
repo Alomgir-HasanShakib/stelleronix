@@ -29,7 +29,7 @@ export default function CareersCTA() {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-light text-white mb-6">Join Our Team</h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-8">
-            Be part of a dynamic team that's shaping the future of technology. Discover exciting career opportunities
+            Be part of a dynamic team that&apos;s shaping the future of technology. Discover exciting career opportunities
             and grow with us.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
