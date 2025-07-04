@@ -1,25 +1,28 @@
-"use client"
+"use client";
 
-import { useEffect, useRef } from "react"
-import { motion, useAnimation, useInView } from "framer-motion"
+import { ReactNode, useEffect, useRef } from "react";
+import { motion, useAnimation, Variants } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 interface AnimatedSectionProps {
-  children: React.ReactNode
-  delay?: number
+  children: ReactNode;
+  delay?: number;
 }
 
 export default function AnimatedSection({ children, delay = 0 }: AnimatedSectionProps) {
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: true })
-  const controls = useAnimation()
+  const controls = useAnimation();
+  const [ref, inView] = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
 
   useEffect(() => {
     if (inView) {
-      controls.start("visible")
+      controls.start("visible");
     }
-  }, [inView, controls])
+  }, [controls, inView]);
 
-  const variants = {
+  const variants: Variants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
       opacity: 1,
@@ -27,10 +30,10 @@ export default function AnimatedSection({ children, delay = 0 }: AnimatedSection
       transition: {
         duration: 0.8,
         delay,
-        ease: [0.42, 0, 0.58, 1], // fixed easing format
+        ease: [0.42, 0, 0.58, 1] as [number, number, number, number], // type assertion for easing array
       },
     },
-  }
+  };
 
   return (
     <motion.div
@@ -38,8 +41,9 @@ export default function AnimatedSection({ children, delay = 0 }: AnimatedSection
       initial="hidden"
       animate={controls}
       variants={variants}
+      className="w-full"
     >
       {children}
     </motion.div>
-  )
+  );
 }
