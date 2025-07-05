@@ -10,7 +10,6 @@ import {
   Users,
   Building2,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 const industries = [
   {
@@ -118,16 +117,6 @@ export default function IndustriesSection() {
         </div>
 
         {/* CTA Button */}
-        <div className="text-center mt-16">
-          <Button
-            variant="outline"
-            size="lg"
-            className="border-blue-600 bg-transparent hover:bg-blue-400 hover:border-blue-500 px-8 py-4 text-white font-medium rounded-full transition-all duration-300"
-          >
-            View All Industries
-            <ArrowRight className="ml-3 h-5 w-5" />
-          </Button>
-        </div>
       </div>
     </section>
   );

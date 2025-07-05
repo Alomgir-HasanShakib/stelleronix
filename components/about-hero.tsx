@@ -1,74 +1,72 @@
-"use client"
+"use client";
 
-import { ArrowRight, Award, Users, Globe, TrendingUp } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function AboutHero() {
   return (
-    <section className="py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-500/20 to-purple-500/20"></div>
-      </div>
+    <section className="relative min-h-[600px] bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 overflow-hidden px-6 sm:px-12 lg:px-24 py-32 flex flex-col justify-center">
+      {/* Abstract Blurred Circles */}
+      <div className="absolute -top-28 -left-28 w-56 h-56 rounded-full bg-blue-600/20 filter blur-3xl" />
+      <div className="absolute bottom-20 right-12 w-40 h-40 rounded-full bg-purple-600/15 filter blur-2xl" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Content */}
-          <div className="space-y-8">
-            <div>
-              <span className="text-blue-400 text-sm font-semibold uppercase tracking-wider mb-4 block">
-                About Stelleronix
-              </span>
-              <h1 className="text-5xl lg:text-7xl font-light text-white mb-6 tracking-tight leading-tight">
-                Building the Future with Technology
-              </h1>
-              <p className="text-xl text-gray-400 leading-relaxed mb-8">
-                A full-service software & BPO development company delivering high-impact solutions across industries. We
-                combine intelligent automation, agile software development, and 24/7 customer operations to unlock
-                business growth.
-              </p>
-            </div>
+      {/* Abstract SVG Background */}
+      <svg
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-10 max-w-full max-h-full w-[600px] h-[600px] z-0"
+        viewBox="0 0 600 600"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <defs>
+          <radialGradient id="grad1" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.3" />
+            <stop offset="100%" stopColor="#9333ea" stopOpacity="0" />
+          </radialGradient>
+          <radialGradient id="grad2" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#f97316" stopOpacity="0.25" />
+            <stop offset="100%" stopColor="#f59e0b" stopOpacity="0" />
+          </radialGradient>
+        </defs>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3">
-                Our Services
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="text-white border-white hover:bg-white hover:text-gray-900 bg-transparent px-8 py-3"
-              >
-                Contact Us
-              </Button>
-            </div>
-          </div>
+        <circle cx="200" cy="300" r="180" fill="url(#grad1)" />
+        <circle cx="420" cy="320" r="150" fill="url(#grad2)" />
+      </svg>
 
-          {/* Stats Grid */}
-          <div className="grid grid-cols-2 gap-8">
-            <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-lg p-6 text-center">
-              <Users className="h-12 w-12 text-blue-400 mx-auto mb-4" />
-              <div className="text-3xl font-light text-white mb-2">500+</div>
-              <div className="text-gray-400 text-sm">Happy Clients</div>
-            </div>
-            <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-lg p-6 text-center">
-              <Award className="h-12 w-12 text-green-400 mx-auto mb-4" />
-              <div className="text-3xl font-light text-white mb-2">5+</div>
-              <div className="text-gray-400 text-sm">Years Experience</div>
-            </div>
-            <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-lg p-6 text-center">
-              <Globe className="h-12 w-12 text-purple-400 mx-auto mb-4" />
-              <div className="text-3xl font-light text-white mb-2">12+</div>
-              <div className="text-gray-400 text-sm">Industries Served</div>
-            </div>
-            <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-lg p-6 text-center">
-              <TrendingUp className="h-12 w-12 text-orange-400 mx-auto mb-4" />
-              <div className="text-3xl font-light text-white mb-2">24/7</div>
-              <div className="text-gray-400 text-sm">Support Available</div>
-            </div>
-          </div>
+      {/* Content */}
+      <div className="max-w-4xl mx-auto text-center lg:text-left space-y-8 relative z-10">
+        <span className="text-blue-400 uppercase tracking-widest font-semibold">
+          Who We Are
+        </span>
+        <h1 className="text-white text-5xl sm:text-6xl font-extrabold leading-tight max-w-3xl mx-auto lg:mx-0">
+          Powering Business{" "}
+          <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+            Growth
+          </span>{" "}
+          with Tech
+        </h1>
+        <p className="text-gray-400 text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
+          Stelleronix delivers customized BPO, software, and IoT solutions that
+          redefine operational excellence. With innovation and agility, we help
+          businesses scale efficiently and effectively.
+        </p>
+
+        <div className="flex justify-center lg:justify-start gap-6 flex-wrap">
+          <Button
+            size="lg"
+            className="bg-blue-600 hover:bg-blue-700 shadow-lg "
+          >
+            <Link href={"/services"}>Our Services</Link>
+          </Button>
+          <Button
+            size="lg"
+            variant="outline"
+            className="text-white bg-transparent border-white hover:bg-white hover:text-gray-900"
+          >
+            <Link href={"/contact"}> Contact Us</Link>
+          </Button>
         </div>
       </div>
     </section>
-  )
+  );
 }

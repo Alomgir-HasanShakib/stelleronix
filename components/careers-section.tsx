@@ -108,7 +108,7 @@ export default function CareersSection() {
               variant="outline"
               className="bg-transparent border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-gray-900"
             >
-              Apply Now
+              <Link href={"/carrers"}>Apply Now</Link>
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </div>

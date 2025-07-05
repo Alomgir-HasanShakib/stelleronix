@@ -7,58 +7,72 @@ const values = [
   {
     icon: Users,
     title: "Customer First",
-    description: "Every decision we make is centered around delivering exceptional value and service to our clients.",
+    description:
+      "Every decision we make centers around delivering exceptional value and service to our clients.",
+    color: "text-blue-400",
   },
   {
     icon: Lightbulb,
     title: "Innovation",
-    description: "We embrace cutting-edge technologies and creative solutions to solve complex business challenges.",
+    description:
+      "We embrace creative thinking and new technology to solve complex challenges with ease.",
+    color: "text-yellow-400",
   },
   {
     icon: Shield,
     title: "Integrity",
-    description: "Transparency, honesty, and ethical practices form the foundation of all our business relationships.",
+    description:
+      "Transparency, ethics, and honesty guide all our business relationships and decisions.",
+    color: "text-green-400",
   },
   {
     icon: Award,
     title: "Excellence",
-    description: "We strive for perfection in every project, delivering quality that exceeds expectations.",
+    description:
+      "We strive for quality that exceeds expectations in every project we deliver.",
+    color: "text-purple-400",
   },
   {
     icon: Heart,
     title: "Collaboration",
-    description: "Teamwork and partnership drive our success, both internally and with our valued clients.",
+    description:
+      "Success comes from synergy — we work closely with clients and teams for mutual growth.",
+    color: "text-pink-400",
   },
   {
     icon: Zap,
     title: "Agility",
-    description: "We adapt quickly to changing needs and market demands, ensuring rapid and effective solutions.",
+    description:
+      "Rapid adaptation to change is key to our problem-solving and delivery approach.",
+    color: "text-orange-400",
   },
 ]
 
 export default function AboutValues() {
   return (
-    <section className="py-24 bg-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative py-24 bg-gray-900 overflow-hidden">
+      <div className="absolute left-0 top-0 w-72 h-72 bg-purple-500/10 rounded-full blur-[100px]" />
+
+      <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-light text-white mb-6 tracking-tight">Our Core Values</h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto font-light leading-relaxed">
-            The principles that guide our work, shape our culture, and define our commitment to excellence.
+          <h2 className="text-4xl lg:text-5xl font-light text-white mb-4">Our Core Values</h2>
+          <p className="text-gray-400 max-w-3xl mx-auto text-lg">
+            What drives us forward — the values that shape our culture, decisions, and every client interaction.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {values.map((value, index) => (
             <Card
               key={index}
-              className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-gray-900/50 border-gray-700/50 backdrop-blur-sm"
+              className="group bg-gray-800/40 border border-gray-700/40 backdrop-blur-sm p-6 hover:-translate-y-1.5 hover:shadow-lg transition duration-300"
             >
-              <CardContent className="p-8">
-                <div className="text-blue-400 mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <value.icon className="h-12 w-12" />
+              <CardContent className="space-y-4">
+                <div className={`flex items-center justify-center ${value.color}`}>
+                  <value.icon className="h-10 w-10" />
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-4">{value.title}</h3>
-                <p className="text-gray-400 leading-relaxed">{value.description}</p>
+                <h3 className="text-xl font-semibold text-white">{value.title}</h3>
+                <p className="text-gray-400 text-base leading-relaxed">{value.description}</p>
               </CardContent>
             </Card>
           ))}

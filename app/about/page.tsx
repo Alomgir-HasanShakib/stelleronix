@@ -1,23 +1,26 @@
-import Header from "@/components/header"
-import AboutHero from "@/components/about-hero"
-import AboutMission from "@/components/about-mission"
-import AboutLeadership from "@/components/about-leadership"
-import AboutValues from "@/components/about-values"
-import AboutStats from "@/components/about-stats"
-import Footer from "@/components/footer"
+import Header from "@/components/header";
+import AboutHero from "@/components/about-hero";
+
+import AboutStats from "@/components/about-stats";
+import AboutValues from "@/components/about-values";
+import AboutLeadership from "@/components/about-leadership";
+import Footer from "@/components/footer";
+import AboutOverview from "@/components/about-overview";
+import AboutMissionVision from "@/components/about-mission-vision";
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-gray-900">
+    <div className="min-h-screen bg-gray-950 text-white">
       <Header />
       <div className="pt-16">
         <AboutHero />
-        <AboutMission />
+        <AboutOverview />
+        <AboutMissionVision />
         <AboutStats />
         <AboutValues />
         <AboutLeadership />
       </div>
       <Footer />
     </div>
-  )
+  );
 }

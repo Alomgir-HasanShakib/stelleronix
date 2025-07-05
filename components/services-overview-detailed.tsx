@@ -1,8 +1,16 @@
-"use client"
+"use client";
 
-import { ArrowRight, Phone, Code, Cloud, Headphones, Database, Users } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import {
+  ArrowRight,
+  Phone,
+  Code,
+  Cloud,
+  Headphones,
+  Database,
+  Users,
+} from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 const services = [
   {
@@ -59,7 +67,8 @@ const services = [
   {
     icon: Headphones,
     title: "Customer Support Services",
-    description: "Dedicated customer support teams providing multi-channel assistance with industry expertise.",
+    description:
+      "Dedicated customer support teams providing multi-channel assistance with industry expertise.",
     features: [
       "24/7 Customer Service",
       "Multi-language Support",
@@ -75,7 +84,8 @@ const services = [
   {
     icon: Database,
     title: "Data Management",
-    description: "Comprehensive data processing, analytics, and management services for informed business decisions.",
+    description:
+      "Comprehensive data processing, analytics, and management services for informed business decisions.",
     features: [
       "Data Entry & Processing",
       "Database Management",
@@ -91,7 +101,8 @@ const services = [
   {
     icon: Users,
     title: "Consulting & Training",
-    description: "Strategic technology consulting and training services to maximize your technology investments.",
+    description:
+      "Strategic technology consulting and training services to maximize your technology investments.",
     features: [
       "Technology Consulting",
       "Digital Transformation",
@@ -104,16 +115,19 @@ const services = [
     ],
     color: "text-cyan-400",
   },
-]
+];
 
 export default function ServicesOverviewDetailed() {
   return (
     <section className="py-24 bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-light text-white mb-6 tracking-tight">Our Service Portfolio</h2>
+          <h2 className="text-4xl lg:text-5xl font-light text-white mb-6 tracking-tight">
+            Our Service
+          </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto font-light leading-relaxed">
-            Comprehensive technology solutions designed to meet your business needs and drive sustainable growth.
+            Comprehensive technology solutions designed to meet your business
+            needs and drive sustainable growth.
           </p>
         </div>
 
@@ -125,11 +139,15 @@ export default function ServicesOverviewDetailed() {
             >
               <CardContent className="p-8">
                 <div className="flex items-center mb-6">
-                  <div className={`${service.color} mr-4 group-hover:scale-110 transition-transform duration-300`}>
+                  <div
+                    className={`${service.color} mr-4 group-hover:scale-110 transition-transform duration-300`}
+                  >
                     <service.icon className="h-12 w-12" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-semibold text-white mb-2">{service.title}</h3>
+                    <h3 className="text-2xl font-semibold text-white mb-2">
+                      {service.title}
+                    </h3>
                     <p className="text-gray-400">{service.description}</p>
                   </div>
                 </div>
@@ -138,7 +156,10 @@ export default function ServicesOverviewDetailed() {
                   <h4 className="text-white font-medium mb-4">Key Features:</h4>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                     {service.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center text-sm text-gray-400">
+                      <div
+                        key={idx}
+                        className="flex items-center text-sm text-gray-400"
+                      >
                         <div className="w-2 h-2 bg-blue-400 rounded-full mr-3 flex-shrink-0"></div>
                         {feature}
                       </div>
@@ -159,5 +180,5 @@ export default function ServicesOverviewDetailed() {
         </div>
       </div>
     </section>
-  )
+  );
 }
